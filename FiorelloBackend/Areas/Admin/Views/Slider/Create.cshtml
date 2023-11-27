@@ -1,0 +1,25 @@
+﻿@using FiorelloBackend.Areas.Admin.ViewModels.Slider;
+@model SliderCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        
+            <div class="form-group">
+            
+                <label asp-for="Photos">Image</label>
+                <input asp-for="Photos"  class="form-control">
+                <span class="text-danger" asp-validation-for="Photos"></span>
+            
+            </div>
+
+        
+       
+      
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a class="btn btn-light" asp-action="Index">Back</a>
+    </form>
+</div>
+

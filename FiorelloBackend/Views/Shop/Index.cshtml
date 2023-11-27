@@ -1,0 +1,26 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="products">
+    <div class="container">
+        <div class="row parent-elem" data-count="@ViewBag.count">
+            <partial name="_ProductPartial"/>
+        </div>
+        <div class="show-more mt-3 mb-3 d-flex justify-content-center w-100">
+            <button class="btn btn-primary">Show more</button>
+        </div>
+        <div class="show-less mt-3 mb-3 d-flex justify-content-center w-100">
+            <button class="btn btn-primary d-none">Show Less</button>
+        </div>
+    </div>
+    
+</section>
+
+@section script {
+    <script src="~/js/shop.js"></script>
+}
+
+
+

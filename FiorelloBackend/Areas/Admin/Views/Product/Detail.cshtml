@@ -1,0 +1,36 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+    <div style="display: flex; max-width: 800px; margin: 50px auto; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+        @if (Model.Images.Count != 0)
+        {
+            foreach (var item in Model.Images)
+            {
+                <img class="product-image" src="~/img/@item.Image" alt="Product Image" style="width:150px; height: 150px; margin:25px; @(item.IsMain ? "border:3px solid green":"")">
+
+            }
+
+        }
+        <div style="padding: 20px;">
+            <h1 style="font-size: 24px; margin-bottom: 10px;">@Model.Name</h1>
+            <h1 style="font-size: 24px; margin-bottom: 10px;">@Model.Category.Name</h1>
+
+            <p style="font-size: 16px; margin-bottom: 10px;">@Model.Description</p>
+            <p style="font-size: 20px; margin-bottom: 10px;">$@Model.Price</p>
+            <div class="back mt-2">
+                <a class="btn btn-info" asp-action="index">Back</a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+

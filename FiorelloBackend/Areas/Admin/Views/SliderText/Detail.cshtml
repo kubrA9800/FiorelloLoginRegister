@@ -1,0 +1,66 @@
+﻿@model SliderText
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Detail</h1>
+    
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="w-100">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Logo
+                    </th>
+                    <th>
+                        Operation
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="py-1">
+
+                        @Model.Title
+
+                    </td>
+                    <td style="white-space:normal">
+
+                        @Model.Description
+                    </td>
+                    <td>
+                        <img src="~/img/@Model.Img" />
+
+                    </td>
+
+                    <td>
+
+                        <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@Model.Id">Detail</a>
+                        <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                        <a class="btn btn-outline-danger">Delete</a>
+                    </td>
+
+                </tr>
+
+
+
+            </tbody>
+        </table>
+       
+    </div>
+    <div class="back mt-2">
+        <a class="btn btn-info" asp-action="index">Back</a>
+
+    </div>
+</div>
+
